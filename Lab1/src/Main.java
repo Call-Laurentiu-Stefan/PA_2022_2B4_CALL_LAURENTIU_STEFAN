@@ -1,3 +1,5 @@
+import java.util.Random;
+
 public class Main {
     public static void printHello(){
         System.out.println("Hello World!");
@@ -53,13 +55,75 @@ public class Main {
         System.out.println("Willy-nilly, this semester I will learn "+ languages[n]);
     }
 
-    public static void main(String[] args) {
-        int n = randomNr();
-        int newN = calculateN(n);
-        int result = sumOfDigits(newN);
-        System.out.println(n);
-        System.out.println(newN);
-        System.out.println(result);
-        magicMessage(result);
+    public static String createRandomWord(int len, char[] alphabet){
+        StringBuilder word = new StringBuilder();
+        Random rand = new Random();
+        for (int i = 0; i < len; i++) {
+            int k = rand.nextInt(alphabet.length);
+            word.append(alphabet[k]);
+        }
+        return word.toString();
     }
+
+    public static void main(String[] args) {
+//        int n = randomNr();
+//        int newN = calculateN(n);
+//        int result = sumOfDigits(newN);
+//        System.out.println(n);
+//        System.out.println(newN);
+//        System.out.println(result);
+//        magicMessage(result);
+        long start = System.nanoTime();
+        int n = Integer.parseInt(args[0]);
+        int m = Integer.parseInt(args[1]);
+        int len = args.length - 2;
+        char alphabet[] = new char[len];
+        for(int i = 2 ;i< args.length;i++){
+            alphabet[i-2] = args[i].charAt(0);
+            if (!Character.isLetter(alphabet[i-2])) {
+                throw new IllegalArgumentException("Nu este litera");
+            }
+        }
+        String words[] = new String[n];
+        for (int i = 0; i < n ; i++) {
+            words[i] = createRandomWord(m,alphabet);
+        }
+        String vecini[][] = new String[n][n-1];
+        boolean mat[][] = new boolean[n][n];
+        for (int i = 0; i < n; i++) {
+            for (int j = i + 1; j < n; j++) {
+                int ok = 0;
+                for (int z = 0; z < len; z++) {
+                    if (words[i].charAt(z) == words[j].charAt(z)) {
+                        ok++;
+                        break;
+                    }
+                }
+                mat[i][j] = mat[j][i] = (ok==1);
+            }
+        }
+        int max = 0;
+        for (int i = 0; i < n; i++) {
+            int count = 0;
+            for (int j = 0; j < n; j++) {
+                if (mat[i][j]){
+                    vecini[i][count]= words[j] + " ";
+                    count++;
+                }
+                if (count > max){
+                    max = count;
+                }
+            }
+        }
+        for(int i =0; i< n; i++){
+            System.out.println("Vecinii cuvantului " + words[i] + " sunt: ");
+            for (int j = 0; j < max; j++) {
+                System.out.print(vecini[i][j]);
+            }
+            System.out.println();
+        }
+        long end= System.nanoTime();
+        System.out.println("Timpul de executie este: "+ (end-start)+" nanosecunde");
+    }
+
 }
