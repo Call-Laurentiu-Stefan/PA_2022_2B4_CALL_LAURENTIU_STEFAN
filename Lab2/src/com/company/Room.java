@@ -1,13 +1,14 @@
 package com.company;
 
-public class Room {
+public abstract class Room {
     private String name;
     private RoomType type;
     private int capacity;
 
-    public Room(){}
+    public Room() {
+    }
 
-    public Room(String name, RoomType type, int capacity){
+    public Room(String name, RoomType type, int capacity) {
         this.name = name;
         this.type = type;
         this.capacity = capacity;
@@ -40,14 +41,14 @@ public class Room {
     @Override
     public String toString() {
         return name + "(" +
-                "cap=" + capacity+
+                "cap=" + capacity +
                 ", " + type +
                 "), ";
     }
 
     @Override
-    public boolean equals (Object obj){
-        if (obj == null || !(obj instanceof Room)){
+    public boolean equals(Object obj) {
+        if (obj == null || !(obj instanceof Room)) {
             return false;
         }
         Room other = (Room) obj;

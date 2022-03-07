@@ -2,14 +2,15 @@ package com.company;
 
 public class Event {
     private String name;
-    private int size, start,end;
+    private int size, start, end;
 
-    public Event(){ }
+    public Event() {
+    }
 
     public Event(String name, int size, int start, int end) {
         this.name = name;
         this.size = size;
-        this. start = start;
+        this.start = start;
         this.end = end;
     }
 
@@ -49,5 +50,14 @@ public class Event {
     @Override
     public String toString() {
         return name + "(size=" + size + ", start=" + start + ", end=" + end + "), ";
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null || (obj instanceof Event)) {
+            return false;
+        }
+        Event other = (Event) obj;
+        return name.equals(other.name);
     }
 }
