@@ -16,13 +16,31 @@ public class Network {
         nodes.add(node);
         numberOfNodes++;
     }
+    public void indentifiableNodes(){
+        List<Node> newNodes = new ArrayList<>();
+        for(Node node : nodes){
+            if (node instanceof Identifiable){
+                newNodes.add(node);
+            }
+        }
+        System.out.println("List of identifiable nodes: ");
+        newNodes.sort(Node::compareByAddress);
+        for(Node node : newNodes){
+            System.out.println(node + " ");
+        }
+        System.out.println();
+    }
+
+
+    public void sortNodes() {
+        nodes.sort(Node::compareTo);
+    }
 
     @Override
     public String toString() {
         String build = "";
-        System.out.println("locations are : ");
         for (Node n : nodes) {
-            build += n.getAddress() + "(" + n.getName() + ") ";
+            build += n.getAddress() + "" + n.getMap()+ "\t" + n.getMap().values() +"\n";
         }
         return build;
     }

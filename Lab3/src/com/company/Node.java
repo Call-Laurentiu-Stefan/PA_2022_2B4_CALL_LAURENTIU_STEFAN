@@ -2,6 +2,7 @@ package com.company;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
 public abstract class Node implements Comparable<Node> {
     private String address;
@@ -32,6 +33,9 @@ public abstract class Node implements Comparable<Node> {
         this.address = address;
     }
 
+    public int compareByAddress(Node other){
+        return (this.address.compareTo(other.address));
+    }
     @Override
     public int compareTo(Node other) {
         if (this.name == null && other.name == null) {
@@ -43,5 +47,15 @@ public abstract class Node implements Comparable<Node> {
         } else {
             return this.name.compareTo(other.name);
         }
+    }
+
+    @Override
+    public String toString() {
+        return address;
+    }
+
+    @Override
+    public int hashCode(){
+        return Objects.hash(address,cost);
     }
 }

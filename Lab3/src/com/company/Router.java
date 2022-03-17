@@ -9,9 +9,5 @@ public class Router extends Node implements Identifiable {
         super.setName(name);
     }
 
-    @Override
-    public String getAddress() {
-        return address;
-    }
 
 }
