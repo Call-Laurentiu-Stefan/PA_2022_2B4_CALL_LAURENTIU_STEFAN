@@ -17,7 +17,7 @@ public class Intersection implements Comparable<Intersection> {
         this.name = name;
     }
 
-    public List<Street> getIntersectionSet() {
+    public List<Street> getStreetList() {
         return streetList;
     }
 

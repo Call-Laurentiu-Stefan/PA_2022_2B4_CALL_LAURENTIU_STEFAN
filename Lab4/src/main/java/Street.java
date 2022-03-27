@@ -31,7 +31,7 @@ public class Street implements Comparable<Street> {
         this.length = length;
     }
 
-    public Set<Intersection> getStreetsList() {
+    public Set<Intersection> getIntersectionSet() {
         return intersectionSet;
     }
 
