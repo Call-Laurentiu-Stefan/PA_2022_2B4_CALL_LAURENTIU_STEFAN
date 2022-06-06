@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://purl.org/rss/1.0/">
+  <channel rdf:about="https://ro.wikipedia.org/">
+    <title>Wikipedia</title>
+    <link>https://ro.wikipedia.org/</link>
+    <description>Pagina de start wikipedia</description>
+    <items>
+      <rdf:Seq>
+        <rdf:li />
+        <rdf:li />
+        <rdf:li />
+        <rdf:li />
+        <rdf:li />
+      </rdf:Seq>
+    </items>
+  </channel>
+  <item rdf:about="https://ro.wikipedia.org/wiki/Graf">
+      <title>Graf</title>
+      <link>https://ro.wikipedia.org/wiki/Graf</link>
+      <description>un graf este o structură care corespunde unui grup de obiecte, în care unele perechi de obiecte sunt într-un anumit sens legate reciproc. Obiectele corespund unor abstracții matematice numite într-un graf noduri/vârfuri (numite și puncte) și fiecare legătură dintre perechile de obiecte asociate se numește muchie.</description>
+  </item>
+  <item rdf:about="https://ro.wikipedia.org/wiki/Conexitate_(teoria_grafurilor)">
+    <title>Graf conex</title>
+    <link>https://ro.wikipedia.org/wiki/Conexitate_(teoria_grafurilor)</link>
+    <description>Gradul de conexitate este numărul minim de elemente (noduri sau muchii) care trebuie eliminate pentru a separa nodurile rămase în două sau mai multe subgrafuri izolate.</description>
+  </item>
+  <item rdf:about="https://ro.wikipedia.org/wiki/Drum_eulerian">
+    <title>Drum eurelian</title>
+    <link>https://ro.wikipedia.org/wiki/Drum_eulerian</link>
+    <description>Un drum eulerian (sau lanț eulerian) este un drum într-un graf finit, care vizitează fiecare muchie exact o dată.</description>
+  </item>
+  <item rdf:about="https://ro.wikipedia.org/wiki/Drum_hamiltonian">
+    <title>Drum Hamiltonian</title>
+    <link>https://ro.wikipedia.org/wiki/Drum_hamiltonian</link>
+    <description>Un drum hamiltonian este un drum într-un graf neorientat sau orientat care vizitează fiecare nod o singură dată.</description>
+  </item>
+  <item rdf:about="https://ro.wikipedia.org/wiki/Graf_orientat">
+    <title>Graf orientat</title>
+    <link>https://ro.wikipedia.org/wiki/Graf_orientat</link>
+    <description>Un graf orientat (sau digraf) este un graf ale cărui muchii au asociat un sens.</description>
+  </item>
+</rdf:RDF>
+
